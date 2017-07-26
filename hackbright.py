@@ -6,6 +6,7 @@ projects, and the grades students receive in class projects.
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+
 db = SQLAlchemy()
 app = Flask(__name__)
 

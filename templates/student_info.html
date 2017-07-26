@@ -9,7 +9,7 @@ Student Info
   <p>Project + Grade:
         <ul>
     {% for record in records %}
-            <li>{{record[0]}} + {{record[1]}}</li>
+      <li><a href='http://127.0.0.1:5000/project?project_title={{record[0]}}'>{{ record[0] }}</a> + {{record[1]}}</li>
     {% endfor%}
             </ul>
   </p>

@@ -30,6 +30,7 @@ def get_student_form():
 
     return render_template('student_search.html')
 
+
 @app.route("/student-creation")
 def student_creation_display():
     """Shows the form that lets you add a new student."""
@@ -48,9 +49,21 @@ def student_add():
     hackbright.make_new_student(first, last, github)
 
     return render_template('new_student_added.html',
-                            github=github,
-                            first=first,
-                            last=last)
+                           github=github,
+                           first=first,
+                           last=last)
+
+
+@app.route('/project')
+def project_listing():
+    """Displays details of a project"""
+
+    project_title, description, max_grade = request.args.get('title')
+    print request.args.get('title')
+    return render_template('project_description.html',
+                           project_title=project_title,
+                           description=description,
+                           max_grade=max_grade)
 
 if __name__ == "__main__":
     hackbright.connect_to_db(app)

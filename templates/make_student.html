@@ -1,11 +1,9 @@
-<!doctype html>
-<html>
-<head>
-    <title>New Student Entry</title>
-</head>
-
-<body>
-    <h2>Add your student here!</h2>
+{% extends 'base.html' %}
+{% block title %}
+New Student Entry
+{% endblock %}
+{% block content %}
+<h2>Add your student here!</h2>
   <form action="/student-add" method="POST">
       <label></br>Enter GitHub username:
           <input type="text" name="github"></br>
@@ -18,6 +16,4 @@
       </label>
       <input type="submit">
   </form>
-
-</body>
-</html>
+{% endblock %}

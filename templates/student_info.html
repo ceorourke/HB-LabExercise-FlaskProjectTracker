@@ -1,19 +1,16 @@
-<!doctype html>
-<html>
-<head>
-    <title>Student Info</title>
-</head>
-<body>
-  <h1>{{ first }} {{ last }}</h1>
+{% extends 'base.html' %}
+{% block title %}
+Student Info
+{% endblock %}
+{% block content %}
+<h1>{{ first }} {{ last }}</h1>
 
   <p>GitHub Account: {{ github }}</p>
   <p>Project + Grade:
         <ul>
-            <li> {{ project }}, {{ grade}}</li>
-<!--     {% for record in  %} -->
-          <!--   <li>record[0],record[1]</li>
-    {% endfor%} -->
+    {% for record in records %}
+            <li>{{record[0]}} + {{record[1]}}</li>
+    {% endfor%}
             </ul>
   </p>
-</body>
-</html>
+{% endblock %}
